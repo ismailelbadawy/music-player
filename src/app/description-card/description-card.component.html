@@ -1,0 +1,6 @@
+<div class="description-card">
+    <p>Lyrics</p>
+    <p class="lyric" [class.arabic-font]='this.isArabic(this.previousLyric)'>{{this.previousLyric}}</p>
+    <p class="lyric-current" [class.arabic-font]='this.isArabic(this.currentLyric)'>{{this.currentLyric}}</p>
+    <p class="lyric" [class.arabic-font]='this.isArabic(this.nextLyric)'>{{this.nextLyric}}</p>
+</div>

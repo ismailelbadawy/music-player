@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mada:wght@300;700&display=swap');
+
+.header{ 
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-items: center;
+    
+    padding-top: 1rem;
+}
+
+.now-playing {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 300;
+    font-size: 12pt;
+}
+
+.album-art {
+    padding-top: 1rem;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+}
+
+.album-art img {
+    width: 80%;
+    max-width: 600px;
+    justify-self: center;
+    box-shadow: 0 10px 10px 4px rgba(0,0,0,0.2);
+}
+
+.song-info {
+    font-family: 'Quicksand', sans-serif;
+    padding-top: 2rem;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.song-title {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 24pt;
+    font-weight: 600;
+    margin-bottom: 2rem;
+}
+
+.artist-title {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 14pt;
+    font-weight: 300;
+    margin-bottom: 0.5rem;
+}
+
+.progress-indicator {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+::ng-deep .mat-progress-bar-fill::after {
+    background-color: #000;
+}
+
+::ng-deep .mat-progress-bar {
+    border-radius: 2px;
+}
+
+::ng-deep .mat-progress-bar-buffer {
+    background: #f1f1f1;
+}
+
+.controls {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding-top: 2rem;
+    justify-items: center;
+    margin-bottom: 2rem;
+}
+
+$button_size : 40px;
+
+$big_button_size : 65px;
+
+::ng-deep .mat-icon{
+    height: $button_size !important;
+    width: $button_size !important;
+    font-size: $button_size !important;
+}
+
+::ng-deep .mat-icon.big{
+    height: $big_button_size !important;
+    width: $big_button_size !important;
+    font-size: $big_button_size !important;
+}
+
+.arabic-font {
+    font-family: 'Mada', sans-serif;
+    text-align: right;
+}
+
+.description-card{ 
+    padding-bottom: 2rem;
+}
+
+.gray-icon { 
+    color: grey;
+}

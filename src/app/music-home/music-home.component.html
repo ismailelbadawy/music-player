@@ -1,0 +1,46 @@
+<div class="header">
+    <!-- <mat-icon>close</mat-icon> -->
+    <div>
+
+    </div>
+    <h4 class="now-playing">{{this.currentSong ? 'Now Playing' : 'No Song Found'}}</h4>
+    <!-- <p>🌻</p> -->
+</div>
+<div class="album-art">
+    <img *ngIf="this.currentSong != undefined" [src]='currentSong.albumArt' />
+</div>
+<div class="song-info" *ngIf="this.currentSong != undefined">
+    <h3 class="artist-title" [class.arabic-font]='this.isArabic(currentSong.artistName)'>
+        {{currentSong.artistName}}
+    </h3>
+    <h4 class="song-title" [class.arabic-font]='this.isArabic(currentSong.title)'>
+        {{currentSong.title}}
+    </h4>
+</div>
+
+<div class="progress-indicator">
+    <mat-progress-bar [value]='this.currentTime * 100 / this.currentSong.duration'></mat-progress-bar>
+</div>
+
+<div class="controls" *ngIf="this.currentSong != undefined">
+    <audio autoplay id="#player" [title]='this.currentSong.title' webkit-playsinline="true" x-webkit-airplay="true"
+        preload="auto">
+        <source [src]='this.currentSong.mp3Source' type="audio/mpeg">
+    </audio>
+    <button mat-button (click)='getPrevious()'>
+        <mat-icon>skip_previous</mat-icon>
+    </button>
+    <button *ngIf="!isPlaying" mat-button (click)='play()'>
+        <mat-icon class="big">play_circle_outline</mat-icon>
+    </button>
+    <button *ngIf="isPlaying" mat-button (click)='pause()'>
+        <mat-icon class="big">pause_circle_outline</mat-icon>
+    </button>
+    <button mat-button>
+        <mat-icon (click)='this.isLooping = !this.isLooping' [class.gray-icon]='!isLooping'>repeat_one</mat-icon>
+    </button>
+</div>
+
+<div class="description-card">
+    <app-description-card class="card" *ngIf="this.currentSong.description" [time]='this.currentTime' [descriptions]='this.currentSong.description'></app-description-card>
+</div>
